@@ -1,0 +1,11 @@
+<nav class="navbar bg-dark navbar-dark">
+    <div class="container-fluid justify-content-start">
+        <a class="navbar-brand" href="{% url 'home' %}">Welcome</a>
+        <div class="navbar-nav flex-row">
+            <a class="nav-link me-2" href="{% url 'home' %}">Home</a>
+            <a class="nav-link me-2" href="{% url 'about' %}">About us</a>
+            <a class="nav-link me-2" href="{% url 'list' %}">Posts</a>
+            <a class="nav-link me-2" href="{% url 'create' %}">Create new</a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} {{ post.title }} {% endblock title %}
+
+{% block content %}
+<h1>{{ post.title }}</h1>
+<h3>{{ post.subtitle }}</h3>
+<small>Created on: {{post.created_at}} </small>
+<p>{{ post.body }}</p>
+<a href="{% url 'list' %}" class="btn btn-success">Go Back</a>
+{% endblock content %}
