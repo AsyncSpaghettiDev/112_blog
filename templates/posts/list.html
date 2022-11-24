@@ -4,26 +4,16 @@
 
 {% block content %}
 <h1>Posts</h1>
-<table class="table table-dark">
-    <thead>
-        <tr>
-            <th>Title</th>
-            <th>Subtitle</th>
-            <th>Created at</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for post in post_list %}
-        <tr>
-            <td class="px-2">{{ post.title }}</td>
-            <td class="px-2">{{ post.subtitle }}</td>
-            <td class="px-2">{{ post.created_at }}</td>
-            <td class="px-2">
-                <a href="{% url 'detail' post.id %}" class="btn btn-success">View</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+
+{% for post in post_list %}
+<div class="card text-white bg-dark mb-3">
+    <div class="card-body">
+        <h5 class="card-title">{{ post.title }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ post.subtitle }}</h6>
+        <p class="card-text">{{post.body|truncatechars:500}}.</p>
+        <a href="{% url 'detail' post.id %}" class="btn btn-success">Continue Reading</a>
+    </div>
+</div>
+<br>
+{% endfor %}
 {% endblock content %}
